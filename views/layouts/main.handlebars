@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        {{!-- Load an icon library to show a hamburger menu (bars) on small screens --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css"> {{!-- CSS --}}
+        <title>{{title}}</title>
+    <body>
+
+        <header>
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <img id="nav-logo" src="/img/logo.png" alt="logo">
+                    <a href="/" class="active">Home</a>
+                    <a href="/products">Products</a>
+                    <a href="/registration">Sign Up</a>
+                    <a href="/login">Login</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <section>
+                {{{body}}}
+            </section>
+        </main>
+        
+        <footer>
+            <img id="footer-logo" src="/img/logo.png" alt="logo">
+            <p>Created By Vladislav Matveev</p>
+            <a href="http://github.com/vmatveev" target="_blank"><img src="img/GitHub-Mark-Light-32px.png" alt="GitHub IMG"></a>
+        </footer>
+        <script src="/js/script.js" type="text/javascript"></script>
+    </body>
+</html>

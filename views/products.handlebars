@@ -1,0 +1,18 @@
+<div id="promotional-banner">
+    <img id="banner" src="promotional-banner.png" alt="promotional banner">
+</div>
+
+<main>
+    <div class="container-products">
+        {{#each products}}
+            <div class="container-product-boxes">
+                <h3 class="container-product-title">{{this.title}}</h3>
+                <img class="container-product-img" src="{{this.productImg}}" alt="img"> <br>
+                <span class="container-product-category">{{this.category}}</span> <br>
+                <span class="container-product-description">{{this.description}}</span> <br>
+                <span class="container-product-price">{{this.price}}</span>
+            </div>
+        {{/each}}
+    </div>
+</main>
+

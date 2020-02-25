@@ -1,0 +1,24 @@
+<div id="promotional-banner">
+    <img id="banner" src="promotional-banner.png" alt="promotional banner">
+</div>
+
+
+
+{{!-- PULLING FROM FAKE DB FOR CATEGORIES --}}
+<div class="container">
+    {{#each homeCategories}}
+        <div class="container-boxes">
+            <h3 class="container-title">{{this.categoryTitle}}</h3>
+            <img class="container-img" src="{{this.categoryImg}}" alt="img">
+        </div>
+    {{/each}}
+</div>
+
+
+{{!-- SECOND GRID // BEST SELLER FROM DB --}}
+<h3 class="container-bestSeller-title">Best Sellers</h3>
+<div class="container-2">
+    {{#each homeBestSeller}}
+        <img class="container-bestSeller-img" src="{{this.bestSellerImg}}" alt="Watch IMG">
+    {{/each}}
+</div>
