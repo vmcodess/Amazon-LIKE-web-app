@@ -4,7 +4,7 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
       {{#each messages}}
-        <div class="registration-errors">{{this.}}</div>
+        <div class="registration-errors">{{this}}</div>
       {{/each}}
 
       <label for="first-name"><b>First Name</b></label> 
@@ -14,7 +14,7 @@
       <input class="input-registration" type="text" name="lastName" value={{this.lastName}}> 
 
       <label for="email"><b>Email</b></label> 
-      <input class="input-registration" type="text" name="email" required> 
+      <input class="input-registration" type="text" name="email" required value={{this.email}}> 
 
       <label for="user-name"><b>Username</b></label> 
       <input class="input-registration" type="text" name="username" value={{this.userName}}> 
@@ -31,6 +31,6 @@
   </div>
 
   <div class="signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="login">Sign in</a>.</p>
   </div>
 </form>

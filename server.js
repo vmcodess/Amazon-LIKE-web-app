@@ -85,14 +85,15 @@ app.post("/registration", (req, res) => {
     if (req.body.psw !== req.body.pswRepeat){
         signUpErrors.push("Passwords do not match");
     }
-    // let str = "123456"
-    // if (req.body.psw < str.length && req.body.pswRepeat < str.length){
-    //     signUpErrors.push("Password must be greater than 6 characters")
-    // }
+
+    let str = "123456"
+    if (req.body.psw < str.length){
+        signUpErrors.push("Password must be greater than 6 characters")
+    }
 
     //checkPassword(req.body.psw);
     // let letterNumber = /^[0-9a-zA-Z]+$/;
-    // if (letterNumber.test(req.body.psw !== true)){
+    // if (req.body.psw !== letterNumber){
     //     signUpErrors.push("Password must contain letters and numbers");
     // }
 
@@ -104,7 +105,8 @@ app.post("/registration", (req, res) => {
             firstName : req.body.firstName,
             lastName : req.body.lastName,
             userName : req.body.userName,
-            email : req.body.email
+            email : req.body.email,
+            // signUpErrors : null
         })
     }
     else {
@@ -136,14 +138,14 @@ app.listen(PORT, () => {
 
 
 
-// // Function to check letters and numbers
-// function checkPassword(inputtxt) {
-//     let letterNumber = /^[0-9a-zA-Z]+$/;
-//     if(inputtxt.match(letterNumber)) {
-//         return true;
-//     }
-//     else { 
-//         // alert("message"); 
-//         return false; 
-//     }
-// }
+// Function to check letters and numbers
+function checkPassword(inputtxt) {
+    let letterNumber = /^[0-9a-zA-Z]+$/;
+    if(inputtxt.match(letterNumber)) {
+        return true;
+    }
+    else { 
+        // alert("message"); 
+        return false; 
+    }
+}
