@@ -4,7 +4,7 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
       {{#each messages}}
-        <div class="registration-errors">{{this}}</div>
+        <div class="registration-errors"><span id="errorMsg">{{this}}</span></div>
       {{/each}}
 
       <label for="first-name"><b>First Name</b></label> 

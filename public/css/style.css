@@ -283,10 +283,6 @@ a {
     font-size: smaller;
 }
 
-.registration-errors{
-    color: red;
-}
-
 /* -------------------- LOGIN PAGE -------------------- */
 
 .login-form {
@@ -348,7 +344,7 @@ img.avatar {
     margin-left: 25%;
     margin-right: 25%;
 }
-  
+
 /* The "Forgot password" text */
 span.psw {
     /* float: right; */
@@ -361,6 +357,27 @@ span.psw {
     margin-bottom: 30px;
     font-size: -webkit-xxx-large;
 }
+
+/* REGISTRATION ERRORS*/
+.registration-errors{
+    margin-bottom: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 0px 0 3px 5px;
+}
+#errorMsg{
+    font-weight: lighter;
+    font-size: smaller;
+    color: red;
+}
+
+/* DASHBOARD */
+#dashboardWelcome{
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {

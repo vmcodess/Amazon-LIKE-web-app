@@ -87,15 +87,14 @@ app.post("/registration", (req, res) => {
     }
 
     let str = "123456"
-    if (req.body.psw < str.length){
+    if (req.body.psw < str.length && req.body.pswRepeat < str.length){
         signUpErrors.push("Password must be greater than 6 characters")
     }
 
     //checkPassword(req.body.psw);
-    // let letterNumber = /^[0-9a-zA-Z]+$/;
-    // if (req.body.psw !== letterNumber){
-    //     signUpErrors.push("Password must contain letters and numbers");
-    // }
+    if (checkPassword(req.body.psw) == false){
+        signUpErrors.push("Password must contain letters and numbers");
+    }
 
 
     if (signUpErrors.length > 0) {
@@ -110,9 +109,9 @@ app.post("/registration", (req, res) => {
         })
     }
     else {
-        res.render("login", {
-            title : "Login",
-            // message : `Welcome ${req.body.firstName}!`
+        res.render("dashboard", {
+            title : "Dashboard",
+            message : `Welcome ${req.body.firstName}!`
         })
     }
 
