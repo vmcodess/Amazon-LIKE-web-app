@@ -734,6 +734,10 @@ span.psw {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px
     }
+    .container-product-img{
+        width: 70%;
+        height: 295.39px;
+    }
     /* REGISTRATION*/
     .container-registration {
         padding: 16px;
@@ -780,6 +784,10 @@ span.psw {
         grid-template-columns: 1fr;
         margin-left: 35%;
         margin-right: 35%;
+    }
+    .container-product-img{
+        width: 70%;
+        height: 295.39px;
     }
     .login-btn {
         width: 20%;
