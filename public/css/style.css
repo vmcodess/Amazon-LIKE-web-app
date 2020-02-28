@@ -75,12 +75,6 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
 } 
 
-/* footer > p {
-    display: inline;
-    padding: 0 35%;
-
-} */
-
 footer > a {
     justify-self: end;
     padding-right: 10px;
@@ -483,7 +477,7 @@ span.psw {
     #footer-logo{
         grid-column: 1/2;
         height: 100%;
-        width: auto;
+        width: 40%;
     }
 }
 
@@ -565,7 +559,7 @@ span.psw {
     #footer-logo{
         grid-column: 1/2;
         height: 100%;
-        padding-left: 20px;
+        width: 40%;
     }
 }
 
@@ -654,8 +648,9 @@ span.psw {
     }
     #footer-logo{
         grid-column: 1/2;
+        height: 100%;
+        width: 10%;
     }
-
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
@@ -711,6 +706,11 @@ span.psw {
     }
     .cancelbtn{
         width: 30%;
+    }
+    #footer-logo {
+        /* display: block; */
+        height: 100%;
+        width: 20%;
     }
 }
 
