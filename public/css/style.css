@@ -421,9 +421,6 @@ span.psw {
         height: auto;
     }
 
-    #promotional-banner{
-        /* margin-bottom: 20px; */
-    }
 
     /* HOME Container */
     .container {
@@ -481,6 +478,8 @@ span.psw {
     }
     #footer-logo{
         grid-column: 1/2;
+        height: 100%;
+        padding-left: 20px;
     }
 }
 
@@ -501,10 +500,6 @@ span.psw {
         height: auto;
     }
 
-    #promotional-banner{
-        /* margin-bottom: 20px; */
-    }
-
     /* HOME Container */
     .container {
         grid-template-columns: 1fr;
@@ -561,6 +556,8 @@ span.psw {
     }
     #footer-logo{
         grid-column: 1/2;
+        height: 100%;
+        padding-left: 20px;
     }
 }
 
