@@ -405,7 +405,7 @@ span.psw {
 
 
 /* Mobile Styles (Iphone X) */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px){
     /* Change styles for span and cancel button on extra small screens */
     span.psw {
       display: block;
