@@ -34,6 +34,7 @@ router.post("/registration", (req, res) => {
         signUpErrors.push("Passwords do not match");
     }
 
+    // TRY req.body.pws.length < 6
     let str = "123456"
     if (req.body.psw < str.length && req.body.pswRepeat < str.length){
         signUpErrors.push("Password must be greater than 6 characters")
