@@ -33,9 +33,8 @@ router.post("/registration", (req, res) => {
     if (req.body.psw !== req.body.pswRepeat){
         signUpErrors.push("Passwords do not match");
     }
-
-    let str = "123456"
-    if (req.body.psw < str.length && req.body.pswRepeat < str.length){
+    let pswd = req.body.psw;
+    if (pswd.length < 6){
         signUpErrors.push("Password must be greater than 6 characters")
     }
 
@@ -57,9 +56,7 @@ router.post("/registration", (req, res) => {
         })
     }
     else {
-
-
-
+        
         const { firstName, email, username, psw } = req.body;
 
         // using Twilio SendGrid's v3 Node.js Library
