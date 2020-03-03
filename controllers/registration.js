@@ -2,6 +2,31 @@ const express = require('express');
 const router = express.Router();
 
 
+
+// Function to check numbers
+function checkPswNumber(inputtxt) {
+    let letterNumber = /[0-9]/;
+    if(inputtxt.match(letterNumber)) {
+        return true;
+    }
+    else { 
+        return false; 
+    }
+}
+// Function to check numbers
+function checkPswLetters(inputtxt) {
+    let letterNumber = /[a-z]/;
+    if(inputtxt.match(letterNumber)) {
+        return true;
+    }
+    else { 
+        return false; 
+    }
+}
+
+
+
+//--------------------------------
 // ROUTE for the registration
 router.get("/registration", (req, res) => {
     res.render("registration/registration", {
@@ -15,19 +40,19 @@ router.post("/registration", (req, res) => {
 
     const signUpErrors = [];
 
-    if (req.body.firstName == ""){
+    if (req.body.firstName === ""){
         signUpErrors.push("Missing First Name");
     }
-    if (req.body.lastName == "") {
+    if (req.body.lastName === "") {
         signUpErrors.push("Missing Last Name");
     }
-    if (req.body.username == ""){
+    if (req.body.username === ""){
         signUpErrors.push("Missing Username");
     }
-    if (req.body.psw == "") {
+    if (req.body.psw === "") {
         signUpErrors.push("Missing Password");
     }
-    if (req.body.pswrepeat == ""){
+    if (req.body.pswrepeat === ""){
         signUpErrors.push("Missing Password");
     }
     if (req.body.psw !== req.body.pswRepeat){
@@ -38,10 +63,15 @@ router.post("/registration", (req, res) => {
         signUpErrors.push("Password must be greater than 6 characters")
     }
 
-    //checkPassword(req.body.psw);
-    if (checkPassword(req.body.psw) == false){
-        signUpErrors.push("Password must contain letters and numbers");
+    //check for numbers
+    if (checkPswNumber(req.body.psw) === false ){
+        signUpErrors.push("Password must contain numbers");
     }
+    //check for letters
+    if (checkPswLetters(req.body.psw) === false){
+        signUpErrors.push("Password must contain letters");
+    }
+
 
 
     if (signUpErrors.length > 0) {
@@ -50,7 +80,7 @@ router.post("/registration", (req, res) => {
             messages : signUpErrors,
             firstName : req.body.firstName,
             lastName : req.body.lastName,
-            userName : req.body.userName,
+            userName : req.body.username,
             email : req.body.email
             // signUpErrors : null
         })
@@ -89,17 +119,17 @@ router.post("/registration", (req, res) => {
     }
 });
 
-// Function to check letters and numbers
-function checkPassword(inputtxt) {
-    let letterNumber = /^[0-9a-zA-Z]+$/;
-    if(inputtxt.match(letterNumber)) {
-        return true;
-    }
-    else { 
-        // alert("message"); 
-        return false; 
-    }
-}
+// // Function to check letters and numbers
+// function checkPassword(inputtxt) {
+//     let letterNumber = /^[0-9a-zA-Z]+$/;
+//     if(inputtxt.match(letterNumber)) {
+//         return true;
+//     }
+//     else { 
+//         // alert("message"); 
+//         return false; 
+//     }
+// }
 
 
 module.exports = router;
