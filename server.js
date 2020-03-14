@@ -9,6 +9,8 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
 
 // tell express to setup our template engine has handlebars
 app.engine("handlebars", exphbs());
@@ -34,6 +36,20 @@ app.use("/", generalController);
 app.use("/", productController); // now working. Was NOT working with /products
 app.use("/", registrationController);
 app.use("/", loginController);
+
+
+
+//-----------------------------------------------------------------------------------------MongoDB
+
+mongoose.connect(process.env.MONGO_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => {
+  console.log(`Connected to the database!!`);
+})
+.catch((err) => {
+  console.log(`Error connecting to DB : ${err}`);
+})
+
+//-----------------------------------------------------------------------------------------MongoDB
 
 
 
