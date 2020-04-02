@@ -1,17 +1,19 @@
-<form class="login-form" action="action_page.php" method="post">
-
-    
+<form class="login-form" action="/login" method="POST">
   <div class="imgcontainer">
     <div class="login-title">Login</div>
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
     
   <div class="container-login">
-    <label for="uname"><b>Username</b></label> <br>
-    <input class="input-text" type="text" placeholder="Enter Username" name="uname" required> <br>
+    <label for="uname"><b>Email</b></label> <br>
+    <input class="input-text" type="text" placeholder="Enter Email" name="email" required> <br>
 
     <label for="psw"><b>Password</b></label> <br>
     <input class="input-text" type="password" placeholder="Enter Password" name="psw" required> <br>
+
+    {{#each loginError}}
+      <div class="login-errors"><span id="errorMsg">{{this}}</span></div>
+    {{/each}}
 
     <button class="login-btn" type="submit">Login</button> <br>
     <label>

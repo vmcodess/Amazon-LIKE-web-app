@@ -203,6 +203,38 @@ footer > a {
     font-size: smaller;
 }
 
+/* ADD TO CART BUTTON */
+.addToCart {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    margin-top: 10px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 18px;
+}
+
+.addToCart:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+/* -------------------- PRODUCT DESCRIPTION -------------------- */
+.grid-container-product-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+
+
 
 
 
@@ -352,6 +384,15 @@ span.psw {
     font-size: -webkit-xxx-large;
 }
 
+.login-errors{
+    border: 1px solid red;
+    width: 50%;
+    margin: 0 25%;
+}
+
+
+
+
 /* REGISTRATION ERRORS*/
 .registration-errors{
     margin-bottom: 10px;
@@ -370,6 +411,8 @@ span.psw {
     padding-left: 10px;
     padding-top: 20px;
 }
+
+
 
 
 

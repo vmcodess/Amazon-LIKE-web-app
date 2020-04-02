@@ -7,10 +7,11 @@
         {{#each products}}
             <div class="container-product-boxes">
                 <h3 class="container-product-title">{{this.title}}</h3>
-                <img class="container-product-img" src="{{this.productImg}}" alt="img"> <br>
+                <a href="/description"><img class="container-product-img" src="{{this.productImg}}" alt="img"></a> <br>
                 <span class="container-product-category">{{this.category}}</span> <br>
                 <span class="container-product-description">{{this.description}}</span> <br>
                 <span class="container-product-price">{{this.price}}</span>
+                <p><button class="addToCart">Add to Cart</button></p>
             </div>
         {{/each}}
     </div>

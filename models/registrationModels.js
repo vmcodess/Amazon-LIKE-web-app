@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 
 // the schema defines the shape of the documents going into the collection
 const registrationSchema = new Schema ({
-
     firstName : {
         type : String,
         required : true
@@ -32,12 +32,23 @@ const registrationSchema = new Schema ({
     }
 });
 
+registrationSchema.pre("save", function(next) {
+    bcrypt.genSalt(10)
+    .then((salt) => {
+        bcrypt.hash(this.password, salt)
+        .then((encryptedPassword) => {
+            this.password = encryptedPassword;
+            next();
+        })
+        .catch(err => console.log(`Error occured whe hashing ${err}`));
+    })
+    .catch(err => console.log(`Error occured when salting ${err}`));
+})
 
 /* 
     Create a model object. This model object is responsible for
     performing CRUD operations on the given collection.
 */
+const userModel = mongoose.model('users', registrationSchema);
 
-const userRegistration = mongoose.model('users', registrationSchema);
-
-module.exports = userRegistration;
+module.exports = userModel;
