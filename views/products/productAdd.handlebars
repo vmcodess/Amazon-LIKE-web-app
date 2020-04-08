@@ -1,0 +1,43 @@
+<div id="add-product-div">
+    <h2>Add Product</h2> <br>
+    <form method="POST" action="/user/productAdd" enctype="multipart/form-data">
+
+        <label>Product Name</label> <br>
+        <input type="text" name="productName" id="productName"> <br><br>
+
+        <label>Description</label> <br>
+        <textarea type="text" name="description" id="productDescription"></textarea><br><br>
+
+        <label>Price</label> <br>
+        <input type="number" name="price" id="productPrice"> <br><br>
+
+        {{!-- <label>Category</label> <br>
+        <input type="text" name="category" id="productCategory"> <br><br> --}}
+
+        <label>Category</label>
+        <select name="category" id="">
+            <option value="electronics">Electronics</option>
+            <option value="officeSolutions">Office Solutions</option>
+            <option value="nutrition">Nutrition</option>
+            <option value="shoes">Shoes</option>
+            <option value="books">Books</option>
+            <option value="beauty&personalCare">Beauty & Personal Care</option>
+        </select> <br> <br>
+
+        <label>Quantity</label> <br>
+        <input type="number" name="quantity" id="productQuantity"> <br><br>
+
+        <label>Best Seller</label>
+        <select name="bestSeller" id="">
+            <option value="">Choose One</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select> <br><br>
+
+        <label>Upload Product Image</label> <br>
+        <input type="file" name="productImage" id="productImage">
+        <br><br>
+
+        <input type="submit" value="Add Product">
+    </form>
+</div>

@@ -8,43 +8,23 @@
         {{!-- Load an icon library to show a hamburger menu (bars) on small screens --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/style.css"> {{!-- CSS --}}
-        {{!-- BOOTSTRAP
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!--Font Awesome-->
-        <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css" />
-        <!-- Custom CSS -->
-        <link rel="stylesheet" type="text/css" href="css/main.min.css"> --}}
-
-
-
         <title>{{title}}</title>
     <body>
 
         <header>
             <nav>
-                <div class="topnav" id="myTopnav">
+                <div class="topnav" id="myTopnav"> 
                     <img id="nav-logo" src="/img/logo.png" alt="logo">
                     <a href="/cart"><i class="fa fa-shopping-cart"></i></a>
                     <a href="/" class="active">Home</a>
-                    <a href="/products">Products</a>
+                    <a href="/products/list">Products</a>
                     {{#if user}}
-                        <a href="/dashboard">Dashboard</a>
+                        <a href="/user/dashboard">Dashboard</a>
                         <a href="/logout">Logout</a>
-                        {{!-- <a href="/cart"><i class="fa fa-shopping-cart"></i></a> --}}
                     {{else}}
-                        {{!-- <a href="/" class="active">Home</a> --}}
-                        {{!-- <a href="/products">Products</a> --}}
                         <a href="/registration">Sign Up</a>
                         <a href="/login">Login</a>
                     {{/if}}
-
-                    {{!-- <a href="/cart"><i class="fa fa-shopping-cart"></i></a> --}}
-                    {{!-- <a href="/dashboard">Dashboard</a>
-                    <a href="/" class="active">Home</a>
-                    <a href="/products">Products</a> --}}
-                    {{!-- <a href="/registration">Sign Up</a> --}}
-                    {{!-- <a href="/login">Login</a>
-                    <a href="/logout">Logout</a> --}}
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                         <i class="fa fa-bars"></i>
                     </a>
@@ -55,16 +35,13 @@
         <main>
             <section>
                 {{{body}}}
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             </section>
         </main>
         
-        <footer>
+        <footer>                        
             <img id="footer-logo" src="/img/logo.png" alt="logo">
-            <p>Created By Vladislav Matveev</p>
-            <a href="http://github.com/vmatveev" target="_blank"><img src="img/GitHub-Mark-Light-32px.png" alt="GitHub IMG"></a>
+            <p>Created By Vladislav Matveev</p>                            
+            <a href="http://github.com/vmatveev" target="_blank"><img src="/img/GitHub-Mark-Light-32px.png" alt="GitHub IMG"></a>
         </footer>
         <script src="/js/script.js" type="text/javascript"></script>
     </body>

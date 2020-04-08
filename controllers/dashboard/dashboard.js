@@ -1,23 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const isAuthenticated = require('../../middleware/auth');
+const dashboardLoader = require('../../middleware/authorization');
 
 
-// dashboard ROUTE // make own .js file
-// router.get("/dashboard", requireLogin, (req, res) => {
 
-//     if(!req.session.user) {
-//         res.redirect('/login');
-//     } else {
-//         res.render('dasboard', {user: req.session.user});
-//         console.log(`dashboard req.session.user function success: ${user}`);
-//     }
+router.get("/dashboard", isAuthenticated, dashboardLoader);
 
+// router.get("/adminDashboard", isAuthenticated, dashboardLoader, (req, res) => {
+//     res.render("user/adminDashboard");
 // })
 
 
 
-// router.get("/dashboard", (req, res) => {
-
-//     res.render("user/dashboard");
-
-// })
+module.exports = router;

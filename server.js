@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const fileUpload = require('express-fileupload');
+app.use(fileUpload());
 
 // tell express to setup our template engine has handlebars
 app.engine("handlebars", exphbs());
@@ -24,21 +25,14 @@ app.use(express.static('public'));
 // This tells express to make form data available via req.body in every request
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(fileUpload());
-
 // session
 //app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: `${process.env.SECRET}`
-  // resave: false,
-  // saveUninitialized: false,
-  // name: 'test'
-  // cookie: { 
-  //   sameSite : true
-  //  }
+  secret: `${process.env.SECRET}`,
+  resave: false,
+  saveUninitialized: false,
 }))
-
-// sessions
+// custom middleware function
 app.use((req, res, next) => {
   // create a global template variable 
   res.locals.user = req.session.userInfo;
@@ -53,13 +47,17 @@ const productController = require("./controllers/products/product");
 const registrationController = require("./controllers/registration/registration");
 const loginController = require("./controllers/login/login");
 const shoppingCartController = require("./controllers/shoppingCart/cart");
+const userDashboard = require("./controllers/dashboard/dashboard");
+const productAdd = require("./controllers/products/productAdd");
 
 // map each controller to the app object
 app.use("/", generalController);
-app.use("/", productController); // now working. Was NOT working with /products
+app.use("/products", productController);
+app.use("/user", productAdd);
 app.use("/", registrationController);
 app.use("/", loginController);
 app.use("/", shoppingCartController);
+app.use("/user", userDashboard);
 
 
 

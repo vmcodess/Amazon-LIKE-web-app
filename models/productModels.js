@@ -8,32 +8,34 @@ const productSchema = new Schema ({
         type : String,
         required : true
     },
-    productDescription : {
+    description : {
         type : String,
         required : true
     },
     price : {
-        type : Number,
+        type : String,
         required : true
     },
-    // productCategory : {
-    //     type : String,
-    //     required : true
-    // },
+    category : {
+        type : String,
+        required : true
+    },
     quantity : {
         type : Number,
         required : true
     },
+    bestSeller : {
+        type : Boolean,
+        default : false
+    },
+    imagePath : {
+        type : String
+    },
     dateCreated : {
         type : Date,
         default : Date.now()
-    },
-    imagePath : {
-        type : String,
-        required : true
     }
 });
-
 
 const productModel = mongoose.model('products', productSchema);
 

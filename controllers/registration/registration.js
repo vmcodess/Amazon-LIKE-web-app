@@ -169,9 +169,9 @@ router.post("/registration", (req, res) => {
 
             sgMail.send(msg)
             .then(()=>{
-                req.session.userInfo = user;
+                //req.session.userInfo = user;
                 //console.log(`${user}`);
-                res.redirect("dashboard");
+                res.redirect("login");
                 console.log(`Email successfully sent!`);
             })
             .catch(err=>{

@@ -29,11 +29,15 @@ const registrationSchema = new Schema ({
     dateCreated : {
         type : Date,
         default : Date.now()
+    },
+    type : {
+        type : String,
+        default : "User"
     }
 });
 
 registrationSchema.pre("save", function(next) {
-    bcrypt.genSalt(10)
+    bcrypt.genSalt(12)
     .then((salt) => {
         bcrypt.hash(this.password, salt)
         .then((encryptedPassword) => {
