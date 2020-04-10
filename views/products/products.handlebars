@@ -4,14 +4,15 @@
 
 <main>
     <div class="container-products">
-        {{#each products}}
+        {{#each data}}
             <div class="container-product-boxes">
-                <h3 class="container-product-title">{{this.title}}</h3>
-                <a href="/description"><img class="container-product-img" src="{{this.productImg}}" alt="img"></a> <br>
+                <h3 class="container-product-title">{{this.productName}}</h3>
+                <a href="/products/description/{{this.id}}"><img class="container-product-img" src="/uploads/{{this.image}}" alt="img"></a> <br>
                 <span class="container-product-category">{{this.category}}</span> <br>
                 <span class="container-product-description">{{this.description}}</span> <br>
-                <span class="container-product-price">{{this.price}}</span>
-                <p><button class="addToCart">Add to Cart</button></p>
+                <span class="container-product-price">${{this.price}}</span>
+                {{!-- <p><button class="addToCart">Add to Cart</button></p> --}}
+                <a href="/add-to-cart/{{this.id}}" class="addToCart">Add to Cart</a>  {{!-- {{this.id}} --}}
             </div>
         {{/each}}
     </div>

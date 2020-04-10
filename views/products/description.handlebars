@@ -1,18 +1,17 @@
-{{#each description}}
-    <main>
-        <div class="grid-container-product-description">
-            <div class="product-img">
-                <a href="/productDescription"><img class="container-product-img" src="{{this.productImg}}" alt="img"></a>
-            </div>
-            <div class="product-description">
-                <h3 class="container-product-title">{{this.title}}</h3> <br>
-                <span class="container-product-category">{{this.category}}</span> <br>
-                <span class="container-product-description">{{this.description}}</span> <br>
-                <span class="container-product-price">{{this.price}}</span>
-                <p><button class="addToCart">Add to Cart</button></p>
-            </div>
+<main class="">
+    <div class="container-productDescription">
+        <div class="container-productDescription-image">
+            <img class="container-productDescription-img" src="/uploads/{{imagePath}}" alt="img">
         </div>
-    </main>
-{{/each}}
+        <div class="container-productDescription-description">
+            <h3 class="container-productDescription-title">{{productName}}</h3> <br>
+            <span class="container-productDescription-info">{{description}}</span> <br>
+            <span class="container-productDescription-price">Price: ${{price}}</span> <br>
+            <span class="container-productDescription-stock">{{stock}}</span>
+            <p><button class="container-productDescription-addToCart">Add to Cart</button></p>
+        </div>
+    </div>
+</main>
+
 
 

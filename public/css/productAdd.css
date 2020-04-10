@@ -1,0 +1,8 @@
+/* button on adminDashboard and on productAdd */
+.product-add-button {
+    text-decoration: none;
+    color: white;
+    padding: 3px 4px;
+    border-radius: 5px;
+    background-color: #555555;
+}

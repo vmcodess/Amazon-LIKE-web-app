@@ -1,0 +1,19 @@
+<main>
+    <div class="container-products">
+        {{#each data}}
+            <div class="container-product-boxes">
+                <h3 class="container-product-title">{{this.productName}}</h3>
+                <a href="/description"><img class="container-product-img" src="/uploads/{{this.image}}" alt="img"></a> <br>
+                <span class="container-product-category">{{this.category}}</span> <br>
+                <span class="container-product-description">{{this.description}}</span> <br>
+                <span>Quantity: {{this.quantity}}</span> <br>
+                <span class="container-product-price">${{this.price}}</span> <br>
+                <a href="/product/edit/{{this.id}}" class="edit-product">Edit</a>
+                <a href="/product/delete/{{this.id}}?method=DELETE" class="edit-product">Delete</a>
+            </div>
+
+        {{else}}
+            <h3>No Products in the database</h3>
+        {{/each}}
+    </div>
+</main>

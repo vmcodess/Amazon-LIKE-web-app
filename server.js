@@ -14,9 +14,21 @@ const session = require('express-session');
 const fileUpload = require('express-fileupload');
 app.use(fileUpload());
 
-// tell express to setup our template engine has handlebars
+// Handlebars middleware
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
+
+// This is to allow specific forms and/or links that were clicked/submitted 
+// to send PUT and DELETE requests respectively
+app.use((req,res,next) => {
+  if( req.query.method == "PUT") {
+    req.method = "PUT"
+  }
+  else if (req.query.method == "DELETE") {
+    req.method = "DELETE"
+  }
+  next();
+})
 
 // server static content with Express 
 app.use(express.static('public/img')); // Had to add this public/img because banner and avatar wasn't showing up with just 'public'
@@ -36,6 +48,7 @@ app.use(session({
 app.use((req, res, next) => {
   // create a global template variable 
   res.locals.user = req.session.userInfo;
+  res.locals.cart = req.session; 
   next();
 })
 // sessions
@@ -49,11 +62,15 @@ const loginController = require("./controllers/login/login");
 const shoppingCartController = require("./controllers/shoppingCart/cart");
 const userDashboard = require("./controllers/dashboard/dashboard");
 const productAdd = require("./controllers/products/productAdd");
+const productView = require("./controllers/products/productView");
+const productEdit = require("./controllers/products/productEdit");
 
 // map each controller to the app object
 app.use("/", generalController);
 app.use("/products", productController);
 app.use("/user", productAdd);
+app.use("/user", productView);
+app.use("/product", productEdit);
 app.use("/", registrationController);
 app.use("/", loginController);
 app.use("/", shoppingCartController);

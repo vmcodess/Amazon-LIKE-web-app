@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const dashboardLoader = require('../../middleware/authorization');
+//const dashboardLoader = require('../../middleware/authorization');
 
 // Import User Registration Schema
 const userModel = require('../../models/registrationModels');

@@ -44,7 +44,6 @@ router.post("/productAdd", isAuthenticated, (req, res) => {
             .catch((err) => {
                 console.log(`Error updating ${err}`);
             })
-
         })
         .catch((err) => {
             console.log(`Error inserting image into uploads folder : ${err}`);
@@ -52,7 +51,6 @@ router.post("/productAdd", isAuthenticated, (req, res) => {
         })
         //------ 
         console.log(`Product successfully inserted into database : ${product}`);
-
     })
     .catch((err) => {
         console.log(`Error saving product into database : ${err}`);

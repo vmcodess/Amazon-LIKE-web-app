@@ -1,0 +1,26 @@
+<div>
+    <h2>Edit Product</h2> <br>
+    <form action="/product/update/{{_id}}?method=PUT" method="POST">
+
+        <label>Product Name</label>
+        <input type="text" name="productName" id="" value="{{productName}}"> <br><br>
+
+        <a href=""><img class="" src="/uploads/{{imagePath}}" alt="img"></a> <br> <br>
+
+        <label>Description</label>
+        <textarea name="description" id="description">{{description}}</textarea> <br><br>
+
+        <label>Best Seller</label>
+        <input type="text" name="bestSeller" value="{{bestSeller}}"> <br><br>
+
+        <label>Quantity</label>
+        <input type="text" name="quantity" value="{{quantity}}"> <br><br>
+
+        <label>Price</label>
+        <input type="text" name="price" value="{{price}}"> <br> <br>
+
+        {{!-- <button class="product-add-button"><a class="product-add-button" href="/products/productView"></a>Update Product</button> --}}
+        <input class="product-add-button" type="submit" value="Update Product">
+        <button class="product-add-button"><a class="product-add-button" href="/user/productView">Cancel</a></button>
+    </form>
+</div>

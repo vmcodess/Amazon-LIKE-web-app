@@ -2,11 +2,13 @@
 <h3>Welcome {{user.firstName}} {{user.lastName}}</h3> <br>
 
 <div>
-    <h4>Edit Products</h4>
+    <h4>What would you like to do?</h4>
     <div>
-        <button><a href="/user/productAdd">Add Product</a></button>
+        <button class="admin-dashboard-button"><a class="admin-dashboard-button" href="/user/productView">View Products</a></button>
+        <button class="admin-dashboard-button"><a class="admin-dashboard-button" href="/user/productAdd">Add Product</a></button>
         {{!-- <a href="/products/list">Products</a> --}}
-        <button>Update Product</button>
-        <button>Delete Product</button>
+        {{!-- <button class="admin-dashboard-button"><a class="admin-dashboard-button" href="/user/productUpdate">Update Product</a></button> --}}
+        {{!-- <button class="admin-dashboard-button"><a class="admin-dashboard-button" href="">Delete Product</a></button> --}}
     </div>
 </div>
+

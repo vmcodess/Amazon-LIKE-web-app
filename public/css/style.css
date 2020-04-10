@@ -175,7 +175,7 @@ footer > a {
 
 .container-product-title {
     text-align: left;
-    font-weight: lighter;
+    font-weight: normal;
     margin-bottom: .5em;
     /* padding-left: 4.3em; */
     font-size: smaller;
@@ -191,9 +191,9 @@ footer > a {
     /* padding-left: .9em; */
 }
 
-/* .container-product-category{
-
-} */
+.container-product-category{
+    font-weight: lighter;
+}
 
 .container-product-description {
     font-size: small;
@@ -207,14 +207,17 @@ footer > a {
 .addToCart {
     border: none;
     outline: 0;
-    padding: 12px;
+    padding: 8px;
     margin-top: 10px;
+    margin-left: 5px;
     color: white;
     background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 50%;
     font-size: 18px;
+    text-decoration: none;
+
 }
 
 .addToCart:hover {
