@@ -1,0 +1,68 @@
+<h1 class="shoppingCartTitle">Shopping Cart</h1>
+<form action="/cart" method="POST">
+    <div class="shopping-cart">
+        {{#if products}}
+            <div class="column-labels">
+                <label class="label product-image">Image</label>
+                <label class="label product-details">Product</label>
+                <label class="label product-price">Price</label>
+                <label class="label productQuantity">Quantity</label>
+                <label class="label product-removal">Remove</label>
+                <label class="label product-line-price">Total</label>
+            </div>
+            {{!-- POPULATE THIS SHIT --}}
+            {{#each products}}
+                <div class="product">
+                    <div class="product-image">
+                        <img src="/uploads/{{this.item.imagePath}}">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title">{{this.item.productName}}</div>
+                        <input type="hidden" id="" name="productName" value="{{this.item.productName}}">  {{!-- hidden for FORM --}}
+                        <p class="product-description">{{this.item.description}}</p>
+                        {{!-- <input type="hidden" id="" name="productDescription" value="{{this.item.description}}"> --}}  {{!-- hidden for FORM --}}
+                    </div>
+                    <div class="product-price">{{this.price}}</div>
+                    <div class="productQuantity">
+                        <input type="number" value="1" min="1" name="productQuantity"> {{!-- added name attribute and it WORKS --}}
+                    </div>
+                    <div class="product-removal">
+                        <button class="remove-product">
+                            Remove
+                        </button>
+                    </div>
+                    <div class="product-line-price">{{totalPrice}}</div>
+                    <input type="hidden" id="totalPrice" name="totalPrice" value="{{totalPrice}}">  {{!-- hidden for FORM --}}
+                </div>
+            {{/each}}
+            
+            {{!-- DELETE AND POPULATE THIS SHIT --}}
+            <div class="totals">
+                <div class="totals-item">
+                    <label class="label">Subtotal</label>
+                    <div class="totals-value" id="cartSubtotal"></div>
+                    <input type="hidden" id="cartSubtotal" name="cartSubtotal">  {{!-- hidden for FORM --}}
+                </div>
+                <div class="totals-item">
+                    <label class="label">Tax (5%)</label>
+                    <div class="totals-value" id="cartTax"></div>
+                    <input type="hidden" id="cartTax" name="cartTax">  {{!-- hidden for FORM --}}
+                </div>
+                <div class="totals-item">
+                    <label class="label">Shipping</label>
+                    <div class="totals-value" id="cartShipping"></div>
+                    <input type="hidden" id="cartShipping" name="cartShipping">  {{!-- hidden for FORM --}}
+                </div>
+                <div class="totals-item totals-item-total">
+                    <label class="label">Grand Total</label>
+                    <div class="totals-value" id="cartTotal"></div>
+                    <input type="hidden" id="cartTotal" name="cartTotal">  {{!-- hidden for FORM --}}
+                </div>
+            </div>
+            
+            <button class="checkout">Place Your Order</button> {{!-- change to <a></a> --}}
+        {{ else }}
+            <h2>No Items in Cart</h2>
+        {{/if}}
+    </div>
+</form>

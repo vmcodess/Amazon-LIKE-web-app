@@ -105,7 +105,7 @@ footer > a {
 
 /* ---------- HOME.HANDLEBARS // 1ST GRID CONTAINER ---------- */
 
-.container {
+.container1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: .5em;
@@ -463,7 +463,7 @@ span.psw {
 
 
     /* HOME Container */
-    .container {
+    .container1 {
         grid-template-columns: 1fr;
         grid-gap: 20px;
     }
@@ -545,7 +545,7 @@ span.psw {
     }
 
     /* HOME Container */
-    .container {
+    .container1 {
         grid-template-columns: 1fr;
         grid-gap: 20px;
     }
@@ -630,7 +630,7 @@ span.psw {
     }
 
     /* HOME Container */
-    .container {
+    .container1 {
         grid-template-columns: 1fr;
         grid-gap: 20px;
     }
@@ -700,7 +700,7 @@ span.psw {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    .container{
+    .container1{
         grid-template-columns: 1fr 1fr;
     }
     .container-title{
@@ -760,7 +760,7 @@ span.psw {
 }
 
 @media screen and (min-width: 1025px) {
-    .container{
+    .container1{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .container-title{

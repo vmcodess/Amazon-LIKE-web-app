@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const isAuthenticated = require('../../middleware/auth');
+const adminDashboardLoader = require("../../middleware/authorization");
 
 // Import Product Schema
 const productModel = require("../../models/productModels"); 
