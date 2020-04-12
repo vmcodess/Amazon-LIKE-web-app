@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sgMail = require('@sendgrid/mail');
+const isAuthenticated = require('../../middleware/auth');
 
 // IMPORT user schema
 const userModel = require('../../models/registrationModels');
@@ -24,7 +25,7 @@ router.get("/add-to-cart/:id", (req, res) => {
     .catch(err => console.log(`error adding to cart : ${err}`));
 })
 
-router.get("/cart", (req, res) => {
+router.get("/cart", isAuthenticated, (req, res) => {
     if (!req.session.cart) {
         return res.render("shoppingCart/cart", {products : null});
     }
@@ -40,7 +41,7 @@ router.get("/cart", (req, res) => {
 })
 
 // ROUTER POST for cart form // send email
-router.post("/cart", (req, res) => {
+router.post("/cart", isAuthenticated, (req, res) => {
 
     //send user an email when he places an order
     // 1. destructure the form
