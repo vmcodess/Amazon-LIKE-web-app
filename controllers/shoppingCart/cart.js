@@ -53,10 +53,11 @@ router.post("/cart", (req, res) => {
         cartShipping : req.body.cartShipping,
         cartTotal : req.body.cartTotal
     }
+    console.log(submittedForm);
 
     // 2. get the users session info
     const user = req.session.userInfo;
-    console.log(req.session.userInfo) // works
+    //console.log(req.session.userInfo) // works
     
 
     // 3. send email with products
@@ -89,16 +90,12 @@ router.post("/cart", (req, res) => {
         console.log(`Email successfully sent!`);
         res.redirect("/");
         //alert('Product ordered!');
-
+        // 4. destroy cart session
+        delete req.session.cart;
     })
     .catch(err=>{
         console.log(`Email did not send -> Error : ${err}`);
     })
-
-
-    // 4. destroy cart session
-    delete req.session.cart;
-
 })
 
 module.exports = router;

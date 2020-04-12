@@ -18,9 +18,8 @@
                     </div>
                     <div class="product-details">
                         <div class="product-title">{{this.item.productName}}</div>
-                        <input type="hidden" id="" name="productName" value="{{this.item.productName}}">  {{!-- hidden for FORM --}}
+                        <input type="hidden" id="" name="productName" value="{{this.item.productName}}">  {{!-- hidden for FORM.. WORKS --}}
                         <p class="product-description">{{this.item.description}}</p>
-                        {{!-- <input type="hidden" id="" name="productDescription" value="{{this.item.description}}"> --}}  {{!-- hidden for FORM --}}
                     </div>
                     <div class="product-price">{{this.price}}</div>
                     <div class="productQuantity">
@@ -32,7 +31,7 @@
                         </button>
                     </div>
                     <div class="product-line-price">{{totalPrice}}</div>
-                    <input type="hidden" id="totalPrice" name="totalPrice" value="{{totalPrice}}">  {{!-- hidden for FORM --}}
+                    <input type="hidden" id="" name="totalPrice" value="{{totalPrice}}">  {{!-- hidden for FORM --}}
                 </div>
             {{/each}}
             

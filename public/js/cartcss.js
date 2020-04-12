@@ -8,10 +8,6 @@ const fadeTime = 300;
 $('.productQuantity input').change( function() {
   updateQuantity(this);
 });
-//test
-
-//test
-
 
 $('.product-removal button').click( function() {
   removeItem(this);
