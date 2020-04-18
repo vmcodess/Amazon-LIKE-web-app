@@ -7,11 +7,11 @@ const isAuthenticated = require('../../middleware/auth');
 const userModel = require('../../models/registrationModels');
 
 // Import Product Schema
-const productModel = require("../../models/productModels"); // dont think i need this
+const productModel = require("../../models/productModels"); 
 // Import cart Model
 const Cart = require("../../models/cart");
 
-router.get("/add-to-cart/:id", (req, res) => {
+router.get("/add-to-cart/:id", isAuthenticated, (req, res) => {
     let productId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
 

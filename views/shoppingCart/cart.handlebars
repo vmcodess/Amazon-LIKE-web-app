@@ -31,7 +31,7 @@
                         </button>
                     </div>
                     <div class="product-line-price">{{totalPrice}}</div>
-                    <input type="hidden" id="" name="totalPrice" value="{{totalPrice}}">  {{!-- hidden for FORM --}}
+                    <input type="hidden" class="product-line-price" id="" name="totalPrice" value="{{totalPrice}}">  {{!-- hidden for FORM --}}
                 </div>
             {{/each}}
             
@@ -40,28 +40,28 @@
                 <div class="totals-item">
                     <label class="label">Subtotal</label>
                     <div class="totals-value" id="cartSubtotal"></div>
-                    <input type="hidden" id="cartSubtotal" name="cartSubtotal">  {{!-- hidden for FORM --}}
+                    <input type="hidden" class="totals-value" id="cartSubtotal" name="cartSubtotal">  {{!-- hidden for FORM --}}
                 </div>
                 <div class="totals-item">
                     <label class="label">Tax (5%)</label>
                     <div class="totals-value" id="cartTax"></div>
-                    <input type="hidden" id="cartTax" name="cartTax">  {{!-- hidden for FORM --}}
+                    <input type="hidden" class="totals-value" id="cartTax" name="cartTax">  {{!-- hidden for FORM --}}
                 </div>
                 <div class="totals-item">
                     <label class="label">Shipping</label>
                     <div class="totals-value" id="cartShipping"></div>
-                    <input type="hidden" id="cartShipping" name="cartShipping">  {{!-- hidden for FORM --}}
+                    <input type="hidden" class="totals-value" id="cartShipping" name="cartShipping">  {{!-- hidden for FORM --}}
                 </div>
                 <div class="totals-item totals-item-total">
                     <label class="label">Grand Total</label>
                     <div class="totals-value" id="cartTotal"></div>
-                    <input type="hidden" id="cartTotal" name="cartTotal">  {{!-- hidden for FORM --}}
+                    <input type="hidden" class="totals-value" id="cartTotal" name="cartTotal">  {{!-- hidden for FORM --}}
                 </div>
             </div>
             
-            <button class="checkout">Place Your Order</button> {{!-- change to <a></a> --}}
+            <button type="submit" class="checkout">Place Your Order</button> 
         {{ else }}
-            <h2>No Items in Cart</h2>
+            <h2 class="emptyCart">No Items in Cart</h2>
         {{/if}}
     </div>
 </form>
