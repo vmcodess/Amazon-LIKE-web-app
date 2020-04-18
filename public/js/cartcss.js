@@ -1,3 +1,5 @@
+const session = require("express-session");
+
 /* Set rates + misc */
 const taxRate = 0.05;
 const shippingRate = 15.00; 

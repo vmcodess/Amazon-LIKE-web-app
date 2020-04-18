@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-//const bcrypt = require('bcryptjs');
-//const isAuthenticated = require('../../middleware/auth');
 const sgMail = require('@sendgrid/mail');
 const userModel = require('../../models/registrationModels');
 
